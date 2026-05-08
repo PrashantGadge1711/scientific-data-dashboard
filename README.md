@@ -8,9 +8,10 @@ A futuristic Lab Analytics Dashboard with advanced UI, authentication, data visu
 - **Dashboard**: Real-time metrics, time-series charts, AI-generated insights
 - **Experiments**: Comprehensive experiment management with anomaly detection
 - **AI Assistant**: Creative chat interface with predictive suggestions and workflow optimization
-- **Reports**: PDF/CSV export with quantum-resistant encryption
+- **Data Import**: CSV/JSON file upload with drag-drop support
+- **Reports**: Advanced reporting with KPIs, trend analysis, narrative insights, accessibility scanner, cross-experiment comparison, predictive forecasts, and interactive story mode
 - **Notifications**: Real-time alerts for anomalies and AI events
-- **Settings**: Futuristic features including emotion-adaptive UI, neural interface, AR/VR visualization
+- **Settings**: Futuristic features including emotion-adaptive UI, neural interface, AR/VR visualization, quantum-resistant encryption
 
 ## Tech Stack
 
@@ -20,6 +21,9 @@ A futuristic Lab Analytics Dashboard with advanced UI, authentication, data visu
 - Recharts (data visualization)
 - Lucide React (icons)
 - jsPDF (PDF export)
+- PapaParse (CSV parsing)
+- Zustand (state management - ready for migration)
+- D3.js, Chart.js (visualization libraries - ready for migration)
 
 ## Getting Started
 
@@ -33,6 +37,19 @@ npm run dev
 ```bash
 npm run build
 npm run start
+```
+
+## Project Structure
+
+```
+src/
+├── components/       # React components (auth, dashboard, experiments, etc.)
+├── context/          # React Context for state management
+├── store/            # Zustand store (ready for migration)
+├── data/             # Demo data generation
+├── hooks/            # Custom React hooks
+├── types/            # TypeScript type definitions
+└── utils/            # Utility functions (analytics, export, import, etc.)
 ```
 
 ## License
