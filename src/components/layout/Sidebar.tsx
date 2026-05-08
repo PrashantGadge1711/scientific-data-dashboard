@@ -1,10 +1,11 @@
-import { LayoutDashboard, FlaskConical, FileText, Settings, Bell, ChevronLeft, Cpu, Brain, Database } from 'lucide-react';
+import { LayoutDashboard, FlaskConical, FileText, Settings, Bell, ChevronLeft, Cpu, Brain, Database, BarChart3 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { Page } from '../../types';
 
 const NAV_ITEMS: { page: Page; icon: React.ElementType; label: string; badge?: string }[] = [
   { page: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { page: 'experiments', icon: FlaskConical, label: 'Experiments' },
+  { page: 'stock-market', icon: BarChart3, label: 'Stock Market' },
   { page: 'data-import', icon: Database, label: 'Data Import' },
   { page: 'reports', icon: FileText, label: 'Reports' },
   { page: 'ai-assistant', icon: Brain, label: 'AI Assistant' },

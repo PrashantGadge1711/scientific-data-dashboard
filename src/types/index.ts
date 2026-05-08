@@ -106,7 +106,22 @@ export interface AppSettings {
   enableBiometric: boolean;
 }
 
-export type Page = 'dashboard' | 'experiments' | 'reports' | 'settings' | 'notifications' | 'ai-assistant' | 'data-import';
+export type Page = 'dashboard' | 'experiments' | 'reports' | 'settings' | 'notifications' | 'ai-assistant' | 'data-import' | 'stock-market';
+
+export type Exchange = 'NSE' | 'BSE';
+
+export interface StockIndex {
+  symbol: string;
+  name: string;
+  exchange: Exchange;
+  currentPrice: number;
+  change: number;
+  changePercent: number;
+  high: number;
+  low: number;
+  volume: number;
+  timestamp: string;
+}
 export type EmotionMode = 'neutral' | 'focused' | 'excited' | 'calm' | 'stressed';
 export type Theme = 'dark' | 'light';
 

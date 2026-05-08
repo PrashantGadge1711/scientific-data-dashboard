@@ -148,69 +148,8 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Recent experiments quick-view */}
-          <div className="glass rounded-xl border border-slate-700/30 overflow-hidden">
-            <div className="px-4 py-3 border-b border-slate-700/30 flex items-center justify-between">
-              <h2 className="text-sm font-bold text-slate-100">Recent Experiments</h2>
-              <button onClick={() => dispatch({ type: 'SET_PAGE', payload: 'experiments' })}
-                className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors">
-                View all →
-              </button>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full" aria-label="Recent experiments">
-                <thead>
-                  <tr className="border-b border-slate-700/30">
-                    {['ID', 'Name', 'Type', 'Instrument', 'Status', 'Confidence', 'Date'].map(h => (
-                      <th key={h} className="px-4 py-2.5 text-left text-[11px] font-medium text-slate-500 uppercase tracking-wider whitespace-nowrap">{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {filtered.slice(0, 6).map((exp, idx) => (
-                    <tr key={exp.id} onClick={() => { dispatch({ type: 'SELECT_EXPERIMENT', payload: exp.id }); dispatch({ type: 'SET_PAGE', payload: 'experiments' }); }}
-                      className="border-b border-slate-700/20 hover:bg-white/3 cursor-pointer transition-colors group"
-                      style={{ animationDelay: `${idx * 40}ms` }}>
-                      <td className="px-4 py-2.5 text-xs font-mono text-cyan-400">{exp.id}</td>
-                      <td className="px-4 py-2.5 text-xs text-slate-200 max-w-[160px] truncate">{exp.name}</td>
-                      <td className="px-4 py-2.5 text-xs text-slate-400">{exp.experimentType}</td>
-                      <td className="px-4 py-2.5 text-xs text-slate-400">{exp.instrument}</td>
-                      <td className="px-4 py-2.5">
-                        <StatusBadge status={exp.status} />
-                      </td>
-                      <td className="px-4 py-2.5">
-                        <div className="flex items-center gap-2">
-                          <div className="h-1 w-12 rounded-full bg-slate-700">
-                            <div className={`h-full rounded-full ${exp.confidence > 80 ? 'bg-emerald-500' : exp.confidence > 60 ? 'bg-amber-500' : 'bg-rose-500'}`}
-                              style={{ width: `${exp.confidence}%` }} />
-                          </div>
-                          <span className="text-xs text-slate-400">{exp.confidence}%</span>
-                        </div>
-                      </td>
-                      <td className="px-4 py-2.5 text-xs text-slate-500 font-mono">{exp.date}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
       </div>
     </div>
-  );
-}
-
-function StatusBadge({ status }: { status: string }) {
-  const cfg: Record<string, string> = {
-    'Completed': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    'In Progress': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-    'Failed': 'bg-rose-500/10 text-rose-400 border-rose-500/20',
-    'Flagged': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-    'Pending': 'bg-slate-500/10 text-slate-400 border-slate-500/20',
-  };
-  return (
-    <span className={`inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-medium border ${cfg[status] ?? cfg['Pending']}`}>
-      {status}
-    </span>
   );
 }
