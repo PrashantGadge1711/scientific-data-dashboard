@@ -91,7 +91,7 @@ export default function ReportsPage() {
                 ? 'bg-cyan-500/15 text-cyan-400 border border-cyan-500/25'
                 : 'text-slate-500 hover:text-slate-300 hover:bg-white/5 border border-transparent'
             }`}>
-            <tab.icon className="w-3.5 h-3.5" aria-hidden="true" />
+            <tab.icon className="w-3.5 h-3.5" aria-hidden="true" as any />
             {tab.label}
           </button>
         ))}
@@ -361,7 +361,7 @@ export default function ReportsPage() {
                     </div>
                     <div className="flex items-center gap-3 flex-shrink-0">
                       <div className={`flex items-center gap-1.5 text-xs ${color}`} aria-label={`Status: ${label}`}>
-                        <StatusIcon className={`w-3.5 h-3.5 ${r.status === 'generating' ? 'animate-spin' : ''}`} aria-hidden="true" />
+                        <StatusIcon className={`w-3.5 h-3.5 ${r.status === 'generating' ? 'animate-spin' : ''}`} aria-hidden="true" as any />
                         <span>{label}</span>
                       </div>
                       {r.status === 'ready' && (

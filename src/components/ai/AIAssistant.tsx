@@ -184,7 +184,7 @@ export default function AIAssistant() {
                   <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-medium mb-2 ${TYPE_COLORS[msg.type] || TYPE_COLORS.info} border`}>
                     {(() => {
                       const Icon = TYPE_ICONS[msg.type] || TYPE_ICONS.info;
-                      return <Icon className="w-3 h-3" aria-hidden="true" />;
+                      return <Icon className="w-3 h-3" aria-hidden="true" as any />;
                     })()}
                     {msg.type}
                   </div>

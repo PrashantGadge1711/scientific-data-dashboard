@@ -8,7 +8,7 @@ import SettingsPage from './components/settings/SettingsPage';
 import NotificationsPage from './components/notifications/NotificationsPage';
 import AIAssistant from './components/ai/AIAssistant';
 import DataImport from './components/import/DataImport';
-import StockMarketPage from './components/stockmarket/StockMarketPage';
+import LabCommandCenter from './components/labcommandcenter/LabCommandCenter';
 
 function AppInner() {
   const { state } = useApp();
@@ -19,8 +19,8 @@ function AppInner() {
 
   const PAGE_MAP = {
     dashboard: <DashboardPage />,
+    'lab-command-center': <LabCommandCenter />,
     experiments: <ExperimentsPage />,
-    'stock-market': <StockMarketPage />,
     'data-import': <DataImport />,
     reports: <ReportsPage />,
     'ai-assistant': <AIAssistant />,

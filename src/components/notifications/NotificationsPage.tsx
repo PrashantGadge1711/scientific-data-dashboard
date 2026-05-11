@@ -74,7 +74,7 @@ export default function NotificationsPage() {
                   <div className="flex items-start gap-3">
                     <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${color}`}
                       style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}>
-                      <Icon className="w-4 h-4" aria-hidden="true" />
+                      <Icon className="w-4 h-4" aria-hidden="true" as any />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-0.5">
