@@ -10,14 +10,16 @@
     "start": "vite preview",
     "lint": "tsc --noEmit",
     "test": "jest --passWithNoTests",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test: watch": "jest --watch",
+    "test: coverage": "jest --coverage",
+	  "homepage": "/scientific-data-dashboard"
   },
+  "homepage": "/scientific-data-dashboard",
   "dependencies": {
     "@react-three/fiber": "^9.6.1",
     "chart.js": "^4.4.1",
     "d3": "^7.9.0",
-    "date-fns": "^3.6.0",
+    "date-fns": "^3.6.0",   
     "framer-motion": "^12.38.0",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.8.2",
